@@ -1,5 +1,55 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  // give me some widget
+  runApp(MyApp());
+}
+
+// Hot reload => ctl + s
+// Hot restart => ctl + shift + \
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: true,
+      home: HomeScreen(),
+      title: 'Ostad app',
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        centerTitle: true,
+        title: Text('Home'),
+        leading: Icon(
+          Icons.adb_rounded,
+          color: Colors.white24,
+          size: 32,
+        ),
+      ),
+      body: Column(
+        children: [
+          Text(
+            'Home screen',
+            style: TextStyle(
+                color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Home',
+            style: TextStyle(
+                color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Text('Hello world'),
+          //Icon(Icons.access_time_outlined),
+        ],
+      ),
+    );
+  }
 }
